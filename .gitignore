@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/HackBright-Work.iml
 
 # C extensions
 *.so
