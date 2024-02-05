@@ -5,6 +5,7 @@ import numpy as np
 from PIL import Image
 import requests
 
+# List of fortunes that will be randomly selected.
 
 fortunes = ["Do not be afraid of competition.",
 "An exciting opportunity lies ahead of you.",
@@ -37,29 +38,65 @@ fortunes = ["Do not be afraid of competition.",
 "Appreciate. Appreciate. Appreciate.",
 "Happy News is on its way."]
 
+# Start user interaction
+
 def ask_user_if_they_want_a_fortune():
-    question = input("Would you like a fortune? Y/N ")
-    return question
+    return input("Would you like a fortune? Y/N ")
 
-while True:
-    print(" > ")
-    answer = ask_user_if_they_want_a_fortune().lower()
-    if answer == 'y':
-        response = requests.get(
-            'https://images.squarespace-cdn.com/content/v1/5f103e5123a13a598106a998/1594903465373-I1453DPQ758S6ORUZF5Z/fortune-cookie-21.jpg')
-        # Convert to RGB, as files on the Internet may be greyscale, which are not
-        # supported.
-        img = Image.open(BytesIO(response.content)).convert('RGB')
 
-        # Convert the image into 50px * 50px, as the convert_array function does not
-        # perform resizing.
-        smaller_img_image = img.resize((50, 40))
-        arr = np.array(smaller_img_image)
-        output = climage.convert_array(arr, is_unicode=True)
-        print(output)
-        print(random.choice(fortunes))
-    elif answer == "n":
-        print("Have a great day!")
-        break
-    else:
-        print("Please input 'y' or 'n' to continue. This is not case-sensitive :)")
+def print_and_resize_fortune_cookie_image(response):
+    """Print an image of a fortune cookie into the terminal
+    :param response:
+    """
+    # Convert the image to RGB
+    img = Image.open(BytesIO(response.content)).convert('RGB')
+    # Convert the image into 50px * 40px
+    smaller_img_image = img.resize((50, 40))
+    arr = np.array(smaller_img_image)
+    # Output the image
+    output = climage.convert_array(arr, is_unicode=True)
+    print(output)
+
+
+def download_and_return_fortune_image():
+    response = requests.get(
+        'https://images.squarespace-cdn.com/content/v1/5f103e5123a13a598106a998/1594903465373-I1453DPQ758S6ORUZF5Z/fortune-cookie-21.jpg')
+    return response
+
+
+def run_fortune_game():
+
+    response = download_and_return_fortune_image()
+
+    while True:
+
+        print(" > ")
+
+        answer = ask_user_if_they_want_a_fortune().lower()
+
+        if answer == 'y':
+
+            print_and_resize_fortune_cookie_image(response)
+
+            # Print a random fortune from the list. Continue until 'no' is selected.
+
+            print(random.choice(fortunes))
+
+        elif answer == "n":
+
+            # No image is printed. Send a nice goodbye message.
+
+            print("Have a great day!")
+            break
+
+            # Prompt the user to respond 'y' or 'n'. Loop until they quit or continue.
+
+        else:
+            print("Please input 'y' or 'n' to continue. This is not case-sensitive :)")
+
+
+# Safe to import
+
+
+if __name__ == "__main__":
+    run_fortune_game()
