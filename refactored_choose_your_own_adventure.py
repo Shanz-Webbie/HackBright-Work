@@ -82,6 +82,7 @@ def totoro(name):
     print("\n")
     print("Suddenly, a mysterious figure appears before {} – it's Totoro, the guardian spirit of the forest.".format(name))
     print("He invites you on an extraordinary adventure through the enchanting world of Studio Ghibli.")
+    print("\n")
     options = ["Follow Totoro into the Forest", "Decline Totoro's Invitation and Return Home"]
     choice = choose_option(options)
     if choice == 1:
