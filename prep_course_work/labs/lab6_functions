@@ -1,0 +1,126 @@
+def hello_print():
+  print("hello")
+
+#hello_print()
+
+def hello_return():
+  return "hello"
+
+greet = hello_return()
+print(greet)
+
+"""Generates a lucky number"""
+
+# The line below allows us to use the function randint
+from random import randint
+
+
+def prints_random_number():
+    """Prints a random number"""
+
+    # randint returns a random integer, we are giving it 0 & 10, so it'll return
+    # a random integer between 0 - 10
+    # For more info: https://docs.python.org/2/library/random.html#random.randint
+
+    print(randint(0, 10))
+prints_random_number()
+
+"""
+Please complete the functions below. This first one is completed for you.
+"""
+
+#########################################################################
+# This one has been completed for you
+
+
+def add(num1, num2):
+    """Returns the sum of two numbers."""
+    # 'sum' is a built-in function in python
+    summation = num1 + num2
+
+    return summation
+
+print(add(3, 10))
+#########################################################################
+# Complete all of the functions below
+
+
+def subtract(num1, num2):
+
+    difference = num1 - num2
+
+    return difference
+
+print(subtract(5, 17))
+def multiply(num1, num2):
+
+    product = num1 * num2
+    return product
+
+print(multiply(5, 17))
+
+def divide(num1, num2):
+
+    dividend = num1 / num2
+    return dividend
+
+print(divide(5, 17))
+
+
+def modulo(num1, num2):
+  number = num1 % num2
+  return number
+
+print(modulo(5, 17))
+
+def power(base, exponent):
+
+  powered_num = base ** exponent
+  return powered_num
+
+print(power(5, 17))
+
+
+
+def square(num1):
+    square = num1 ** 2
+    return square
+result = square(5)
+print(result)
+
+while True:
+    calculation = input("What calculation would you like to perform? add / divide / multiply / subtract / modulo / power / square / quit > ")
+
+
+
+    if calculation == "add":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(add(num1, num2))
+    elif calculation == "subtract":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(subtract(num1, num2))
+    elif calculation == "multiply":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(multiply(num1, num2))
+    elif calculation == "divide":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(divide(num1, num2))
+    elif calculation == "modulo":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(modulo(num1, num2))
+    elif calculation == "power":
+        num1 = int(input("What is your first value? > "))
+        num2 = int(input("What is your second value? > "))
+        print(power(num1, num2))
+    elif calculation == "square":
+        num1 = int(input("What is your first value? > "))
+        print(square(num1))
+    elif calculation == "quit":
+          break
+    else:
+          print("Sorry, I don't understand that calculation.")

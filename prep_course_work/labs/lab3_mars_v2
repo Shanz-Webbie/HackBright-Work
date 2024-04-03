@@ -1,0 +1,39 @@
+import random
+
+"""create loop  
+  input block that prompts the user for an 'observation' 
+  print the observation
+    if the observation is empty (if the user selects 'enter' without an observation)
+    break '"""
+
+# while True:
+#    print("Please type in your observations: ")
+#    observation = input("> ")
+#    if observation == "":
+#     break
+#    if not observation.endswith("."):
+#      observation = f"{observation}."
+#      print(f'Noted: "{observation}"')
+
+# print("Thank you for your observation!")
+
+print("You're about to land on Mars! ... The landing was successful. Time to disembark! ...but first, you need to enter the door code to unlock the ship")
+
+print("Please guess the door code")
+correct_code = "1234"
+num_wrong = 0
+
+while True:
+  guess = input("Door code: ")
+  if guess == correct_code:
+    print("Open the door!")
+    break
+  if guess != correct_code:
+    num_wrong += 1
+    print("Sorry, you guessed wrong.")
+    print(f"Wrong Guesses: {num_wrong}")
+  elif len(input(guess)) != 4:
+    print("Invalid door code. Enter 4 numbers only.")
+
+
+

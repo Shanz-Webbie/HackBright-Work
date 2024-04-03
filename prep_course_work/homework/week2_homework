@@ -1,0 +1,80 @@
+# Conditionals:
+
+# 1.
+
+sentence = "Time flies when you're coding."
+
+if len(sentence) > 15:
+  print("longer than 15 characters")
+elif len(sentence) < 15:
+  print("not longer than 15 characters")
+
+
+# 2.
+
+print("Welcome to the adder-subtractor!")
+
+num1 = input("What is number 1? ")
+num2 = input("What is number 2?")
+
+print("Would you like to add or subtract those numbers?")
+print("Please type + or -")
+operator = input("> ")
+
+# my code:
+
+if operator == "+":
+  answer = int(num1) + int(num2)
+  print(answer)
+elif operator == "-":
+  answer = int(num1) - int(num2)
+  print(answer)
+else:
+  print("Sorry, I can only add or subtract!")
+
+# 3
+
+croissant_1 = ["Yao", 4, "golden brown", "crescent"]
+croissant_2 = ["Alana", 33, "golden brown", "crescent"]
+croissant_3 = ["George", 27, "golden brown", "crescent"]
+croissant_4 = ["George", 27, "light brown", "rectangle"]
+
+# my code:
+
+if croissant_1[1] > 6 and croissant_1[2] == "golden brown":
+  print(f"{croissant_1[0]} can enter the competition")
+
+if croissant_2[1] > 6 and croissant_2[2] == "golden brown":
+  print(f"{croissant_2[0]} can enter the competition")
+
+if croissant_3[1] > 6 and croissant_3[2] == "golden brown":
+  print(f"{croissant_3[0]} can enter the competition")
+
+if croissant_4[1] > 6 and croissant_4[2] == "golden brown":
+  print(f"{croissant_4[0]} can enter the competition")
+
+
+# Loops:
+
+# 1.
+
+students = ["Julia", "Sarah", "Andy", "Charlotte", "Taylor", "Sam"]
+
+# my code
+
+for student in students:
+  print(student)
+
+# 2.
+
+num = 0
+list_length = len(students)
+
+while num < list_length:
+  print(num)
+  num += 1
+
+# 3.
+
+alpha_order = sorted(students)
+print(alpha_order)

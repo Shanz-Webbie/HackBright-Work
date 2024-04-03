@@ -1,0 +1,56 @@
+# import sys
+
+# List we'll use for all of the books in library
+
+books = ["Dune", "Pride and Prejudice"]
+
+print("Brighticorn's Books")
+print("-------------------")
+
+while True:
+  
+    print("You can: add / view / check / exit")
+    command = input("action > ")
+    command = command.lower()
+    options = ["add", "view", "check", "exit"]
+    print(f"Action: {command}")
+    
+    if command == "exit":
+        print("Goodbye!")
+        break
+        # sys.exit()
+      
+    elif command == "add":
+        print("Add Book")
+        name_of_book = input("What is the name of the book?")
+        books.append(name_of_book)
+        print(f"Added: {name_of_book}")
+    
+    elif command == "view":
+        print("View Books")
+        for book in books:
+          print(book)
+          print("End of listing")
+          
+        
+      # num_books = len(books)
+      # i = 0
+    
+      # while i < num_books:
+      #   print(books[i])
+      #   i = i + 1
+      #   print("End of listing")
+    
+    elif command == "check":
+      print("Check for a Book")
+      book_to_check = input("What book would you like to check for?")
+      if book_to_check in books:
+        print(f"Found: {book_to_check}")
+      else:
+        print("Not found")
+    
+    
+    
+    else:
+      print("Sorry that's not an option")
+    

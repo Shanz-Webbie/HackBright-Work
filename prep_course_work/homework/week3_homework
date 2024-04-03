@@ -1,0 +1,25 @@
+def count_to_three():
+  """Counts to three and returns nothing."""
+
+  # YOUR CODE HERE :)
+  num = 0
+  while num < 3:
+    num += 1
+    print(num)
+
+count_to_three()   # <--- we're calling the function for you :)
+
+def greater_than_10(nums):
+  return [num for num in nums if num > 10]
+
+print(greater_than_10(nums= (1,5,23,89,11,84,5)))
+
+def get_a_funny_sentence(name= None, place= None):
+  if name is None:
+    name = input("What is your name? ")
+  if place is None:
+    place = input("What is your favorite place? ")
+  print("I am going to create a funny sentence based upon your input")
+  return (f"Yesterday, {name} sipped tea at a beautiful yet boring bungalow in {place}.")
+
+print(get_a_funny_sentence())

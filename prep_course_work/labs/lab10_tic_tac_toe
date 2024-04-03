@@ -1,0 +1,106 @@
+board = [["-","-","-"],["-","-","-"],["-","-","-"]]
+
+def make_move(board):
+  """Asks a player for a move and adds the move to the board."""
+  
+  # asks user for their player #
+player_number = input("Are you player 1 or 2? ") 
+
+  # asks user for a row
+row = int(input("What row would you like to place your mark at? "))
+
+  # asks user for a column
+column = int(input("What column would you like to place your mark at? "))
+
+  # check if board at row and column has been taken, else put x or o there depending on player
+
+if board[row][column] != "-":
+  print("That move has already been taken.")
+
+elif player_number == 1:
+  board[row][column] = "x"
+  print(f"You have chosen to position an x at ({row},{column})")\
+  
+elif player_number == 2:
+  board[row][column] = "x"
+  print(f"You have chosen to position an x at ({row},{column})")
+  
+else:
+  board[row][column] = "o"
+  print(f"You have chosen to position an o at ({row},{column})")
+
+def print_board(board):
+  """Prints board to show the players"""
+print()
+print(" " + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + " ")
+print("---+---+---")
+print(" " + board[1][0] + " | " + board[1][1] + " | " + board[1][2] + " ")
+print("---+---+---")
+print(" " + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + " ")
+print()
+
+# print_board(board)
+
+def check_win(board):
+  """Checks board for a winner and returns winner"""
+
+  # checks rows for win
+
+
+  # checks columns for win
+
+
+  # checks diagonals for win
+
+
+def check_tie(board):
+  """Checks if board is full and there's a tie"""
+
+
+def play(board):
+  """Main REPL function to play the game"""
+# Print greeting followed by instructions to play the game.
+# show the empty board.
+# start a loop.
+# loop ends when there is a winner or a tie as a result.
+#   the board will update based upon user input.
+#   display board to the opponent as the game progresses
+#   check to see if there is a winner
+#   check to see if there is a tie
+# declare winner or tie and end game loop
+
+#################################################################################
+# tic_tac_toe_board = [["-","-","-"],["-","-","-"],["-","-","-"]]
+# play(tic_tac_toe_board)
+
+# print(tic_tac_toe_board)
+
+"""Order of function calls"""
+# play()
+# make_move()
+# print_board()
+# check_win()
+# check_tie()
+
+def play(board):
+  """Main REPL function to play the game"""
+
+while True:
+    make_move(board)
+    print_board(board)
+    winner = check_win(board)
+    if winner:
+      print("Congratulations! You won!")
+      break
+    tie = check_tie(board)
+    if tie:
+      print("It's a tie!")
+      break
+    # else:
+    #   print("There is no winner yet. Keep playing!")
+
+
+
+
+
+

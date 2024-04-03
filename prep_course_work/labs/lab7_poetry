@@ -1,0 +1,112 @@
+import random
+
+"""Pseudocode and planning"""
+
+# Create lists of poems organized based on story types eg "silly" and "sad"
+# Greet the user with a welcoming message
+# Print instructions for user
+# Ask user for input of poem type
+# generate random output of poem
+#print the poem
+# Ask user if they want to create another poem
+
+"""Poetry Lines"""
+
+
+
+sad_first = [
+  "A gray cat sat down",
+  "Rooms without warmth",
+  "Cure songs played alone",
+  "Reading The Bell Jar"
+]
+
+silly_first = [
+  "The penguin waddled",
+  "Toasted marshmallows!",
+  "A jester named Jane",
+  "A box of pretzels"
+]
+
+sad_second = [
+  "Like dead leaves upon a grate",
+  "Echoing meaninglessly",
+  "Aimless and pallid",
+  "Alive but without feeling"
+]
+
+silly_second = [
+  "Squoosh squoosh I'm a red teapot",
+  "A carnival of lemurs",
+  "Who wants to play racquetball?",
+  "Who ordered the stromboli?"
+]
+
+sad_third = [
+  "It will cease for now.",
+  "So loveth no one.",
+  "Inverted echoes.",
+  "But no one to hear."
+]
+
+silly_third = [
+  "Mustaches for all!",
+  "A pox on your nose!",
+  "You gonna eat that?",
+  "Something about cheese?"
+]
+
+def choose_style():
+
+  """Choose a style; ensuring they pick a valid style."""
+ 
+
+  
+  while True: 
+    
+    user_selected_style = input("You can have a silly or a sad haiku. Pick one. > ")
+    if user_selected_style == "silly" or user_selected_style == "sad":
+      return user_selected_style
+    else:
+      print("Not a valid choice!")
+    
+choose_style()
+
+def display_poem(first_lines, second_lines, third_lines):
+  """Display the randomized poem."""
+  
+  first = random.choice(first_lines) 
+  second = random.choice(second_lines)
+  third = random.choice(third_lines)
+  
+  print()
+  print("Your artisanally manufactured haiku is...")
+  print()
+  print(first)
+  print(second)
+  print(third)
+  print()
+
+def run_program():
+  """Display poems until the user selects to quit."""
+
+  print("You can have a silly or a sad haiku. Pick one.")
+
+while True:
+    
+  user_selected_style = choose_style()
+    
+  if user_selected_style == "silly":
+  
+    display_poem(silly_first, silly_second, silly_third)
+      
+  if user_selected_style == "sad":
+    display_poem(sad_first, sad_second, sad_third)
+      
+  again = input("Want another? > ")
+    
+  if again.startswith("n") or again.startswith("N"):
+    print("See you later!")
+    break
+
+  

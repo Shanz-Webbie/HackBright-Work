@@ -1,0 +1,169 @@
+import turtle
+
+def forward(num_pixels):
+  turtle.forward(num_pixels)
+
+def right(num_degrees):
+  pass
+
+def left(num_degrees):
+  pass
+
+def draw_a_line():
+  turtle.forward(50)
+
+def draw_an_L():
+  turtle.forward(50)
+  turtle.left(90)
+  turtle.forward(100)
+
+def draw_an_S():
+  turtle.forward(50)
+  turtle.left(90)
+  turtle.forward(100)
+  turtle.right(90)
+  turtle.forward(50)
+
+def draw_a_square():
+  turtle.forward(40)
+  turtle.left(90)
+  turtle.forward(40)
+  turtle.left(90)
+  turtle.forward(40)
+  turtle.left(90)
+  turtle.forward(40)
+
+def draw_a_triangle():
+  turtle.forward(50)
+  turtle.left(120)
+  turtle.forward(50)
+  turtle.left(120)
+  turtle.forward(50)
+
+def draw_a_funky_square(width):
+  turtle.forward(width)
+  turtle.left(90)
+  turtle.forward(width)
+  turtle.left(90)
+  turtle.forward(width)
+  turtle.left(90)
+  turtle.forward(width)
+  turtle.left(90)
+
+def draw_a_funky_triangle(side_length):
+  turtle.forward(side_length)
+  turtle.left(120)
+  turtle.forward(side_length)
+  turtle.left(120)
+  turtle.forward(side_length)
+  turtle.left(120)
+  
+
+#draw_a_line()
+#draw_an_L()
+#draw_an_S()
+#draw_a_square()
+# draw_a_triangle()
+#draw_a_funky_square(100)
+# draw_a_funky_triangle(2000)
+
+
+def draw_a_spiral():
+
+  length = 5
+  turtle.forward(length)
+  turtle.left(90)
+  
+  length = length + 5
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+  
+  length = length + 5
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+  
+  length = length + 10
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+
+  length = length + 15
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+
+  length = length + 25
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+
+  length = length + 40
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+
+  length = length + 65
+  print("length: ", length)
+  turtle.forward(length)
+  turtle.left(90)
+
+
+def draw_a_square_with_while():
+  right_angle = 90
+  length = 150
+  num_sides = 4
+  i = 0
+  while i < num_sides:
+    turtle.forward(length)
+    turtle.left(right_angle)
+    i = i + 1
+
+
+def draw_a_red_square_with_while():
+  right_angle = 90
+  length = 150
+  num_sides = 4
+  i = 0
+  while i < num_sides:
+    i = i + 1
+    if i == 3:
+      turtle.forward(length)
+      turtle.left(right_angle)
+      turtle.color("red")
+    else:
+      turtle.forward(length)
+      turtle.left(right_angle)
+      turtle.color("black")
+  
+
+def draw_a_rectangle_with_loop():
+  right_angle = 90
+  length = 150
+  num_sides = 4
+  i = 0
+  while i < num_sides:
+    if (i % 2) == 0:
+      turtle.forward(length)
+    else:
+      turtle.forward(length/2)
+    turtle.left(right_angle)
+    i = i + 1
+    
+def draw_a_hexagon_with_while():
+  right_angle = 13.9
+  length = 50
+  num_sides = 26
+  i = 0
+  while i < num_sides:
+    turtle.forward(length)
+    turtle.left(right_angle)
+    i = i + 1
+
+#draw_a_spiral()
+#draw_a_square_with_while()
+#draw_a_red_square_with_while()
+#draw_a_rectangle_with_loop()
+#draw_a_hexagon_with_while()
+input()

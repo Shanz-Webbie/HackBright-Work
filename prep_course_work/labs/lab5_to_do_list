@@ -1,0 +1,69 @@
+def things_to_do():
+
+  """add new task to-do list
+delete a task from the to-do list
+view all tasks in the to-do list
+Main Function to run the to-do list app."""
+
+# Greet User
+
+# Print welcome message.
+# List all options the user can take.
+# Ask which option they would like to perform.
+# create an empty list to hold all of the user's selected options.
+
+# Add task
+
+# if option selected is "A"
+# allow user to input a task they would like to add to their to-do list
+# print success message for each added task
+# for loop will continue to add tasks until the user selects another command.
+
+
+# View all tasks
+  
+# if option selected is "V" 
+# use for loop to print all tasks[index].
+#allow a user to view all tasks in the to-do list.
+  
+# Edit Task
+# if option selected is "E"
+# Delete a task
+  
+greeting = print("Welcome!")
+option_a = print("[A]dd a new task")
+option_b = print("[D]elete a task")
+option_d = print("[V]iew all tasks")
+option_e = print("[Q]uit the program")
+
+to_do_list = []
+
+while True:
+    user_option = input("Choose an option") 
+    # Add
+    if user_option == "A": 
+      option_a_selected = input("What would you like to add? ")      
+      to_do_list.append(option_a_selected)
+      print(f"Success! {option_a_selected} added")  
+      print(to_do_list)
+      
+    # Quit
+    elif user_option == "Q":
+      print("Goodbye!")
+      break
+    # Delete
+    elif user_option == "D":
+      task_to_delete = input("> ")
+
+      tasks_to_keep = []
+
+      for task in to_do_list:
+          if task != task_to_delete:
+              tasks_to_keep.append(task)
+              to_do_list = tasks_to_keep
+
+      (f"Success! {task_to_delete} deleted")
+   
+    elif user_option == "V":
+      for task in to_do_list:
+        print(task)

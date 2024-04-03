@@ -1,0 +1,64 @@
+import time
+
+name = input("What is your name?")
+print()
+# print(name)
+print(f"Hello {name}")
+
+#while True:
+# excited_question = input("Are you excited? Type Y/N")
+# print()
+# excited = excited_question.upper()
+print("Are you excited? Type Y or N")
+excited = input("> ")
+if excited == "Y":
+  print("I knew you'd say that. It's so cool that you're going to Mars!")
+if excited == "N": 
+  print("Well, it's too late to back out now")
+  #else:
+    #print(f"I'm sorry, {name}, I don't understand your response.")
+    #break
+print("It's time to pack for your trip to Mars.")
+print("How many suitcases do you plan to bring?")
+num_suitcases = input("> ")
+num_suitcases = int(num_suitcases)
+if num_suitcases > 2:
+  print("That's way too many. You'll have to pack more lightly.")
+else:
+  print("Perfect. You'll certainly fit in the spaceship!")
+
+print("You're allowed to bring one companion animal with you.")
+print("What kind of companion animal would you like to bring?")
+companion_type = input("> ")
+print("What is your companion's name?")
+companion_name = input("> ")
+print(f"Cool, so you're bringing {companion_name.title()} the {companion_type}.")
+
+print("NASA has a interior design team offering to outfit your space ship.")
+print("You have a couple of options for the interior decor of your ship.")
+print(" A  Sleek, modern minimalism")
+print(" B  Retro/vintage space age")
+print(" C  SF Hippie chic")
+
+decor = input(">")
+
+if decor == "A":
+  decor = "modern minimalist"
+elif decor == "B":
+  decor = "retro"
+elif decor == "C":
+  decor = "hippie chic"
+else:
+  print("Please try again. Select one of the above options.")
+
+print("I can see it now:")
+print(f"{name} and {companion_name} surfing the celestial abyss...")
+print(f"in a {decor} spaceship.")
+
+print()
+timer = 5
+while timer > 0:
+  print(timer, "...")
+  time.sleep(2)
+  timer = timer - 1
+print("*** LIFTOFF ***")

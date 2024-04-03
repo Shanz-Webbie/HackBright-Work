@@ -1,0 +1,173 @@
+# # The line below allows us to use the function choice
+# from random import choice
+
+# # below asks the user for their name and sets it to the variable name
+# user_name = input("What is your name? ")
+
+
+# def creates_fancy_name(name):
+#     """Creates a new fancy name"""
+
+#     name_endings = ["Great", "Talented", "Hardworking", "Adventurous", "Witty"]
+
+#     new_ending = choice(name_endings)
+
+#     new_name = f"{name} the {new_ending}"
+
+#     return new_name
+
+# fancy_name = creates_fancy_name(user_name)
+# print(f"Okay, so your name is {fancy_name}")
+# print(name_endings)
+
+"""This is a script that keeps track of two players scores"""
+
+INSTRUCTIONS = """
+  (A)dd to score
+  (D)ecrease score
+  (S)how scores
+  (E)nd game (Show final score)
+  """
+
+which_player = """
+  A - Player A
+  B - Player B
+  """
+
+def validate_user_input(user_value):
+  print("line 38", type(user_value))
+  result = isinstance(user_value, int) is True
+  # or isinstance(user_value, float) is True
+  print("line 39", result)
+  return result 
+   
+  # if type(prompt) == type(float):
+  #   prompt = int(prompt)
+  #   print("first if statementran", type(prompt))
+
+  # if type(prompt) == type(str):
+  #   print("Please type a number")
+
+  # return prompt
+
+  #try: prompt+2
+  #except: 
+
+def increase_score(current_score):
+    """Returns updated score increased by user-specified amount"""
+
+    # Your code here, remove 'pass' once you have written the function body
+    # how_many_points = input("How many points?")
+    #prompt = input("Enter an integer: ")
+    while True:
+      how_many_points = input("How many points? ")
+      try:
+        int_value = int(how_many_points)
+        return current_score + int_value
+      except ValueError:
+        print("Please enter an integer\n")
+      
+      #valid_input = validate_user_input(int_value)
+      #print("line 60: valid_iput: ", valid_input)
+      #if valid_input is True:
+      #  return current_score + int_value
+      # else:
+      #   how_many_points = input("How many points? (enter an integer) ")
+    
+  
+def decrease_score(current_score):
+  """Returns updated score decreasing by user-specified amount"""
+  how_many_points = input("How many points?")
+  current_score = current_score - (how_many_points)
+  return current_score
+  
+def prints_scores(player_a_score, player_b_score):
+    """Prints scores"""
+
+    # Your code here, remove 'pass' once you have written the function body
+    print(f"Player A is {player_a_score}")
+    print(f"Player B is {player_b_score}")
+
+
+def prints_final_result(player_a_score, player_b_score):
+    """Prints the final game result"""
+
+    # Your code here, remove 'pass' once you have written the function body
+    print(f"The final score is : \n{player_a_score}\n{player_b_score}")
+    if player_a_score > player_b_score:
+      print("Player A won!")
+
+    if player_b_score > player_a_score:
+      print("Player B won!")
+
+    else: 
+      print("The game has tied!")
+
+def play_game():
+    """Starts game play"""
+
+    player_a_score = 0
+    player_b_score = 0
+
+    #infinite game loop! Yay, so helpful.
+    while True:
+
+        # prints every time through the while loop, user always knows options.
+        print(INSTRUCTIONS)
+        choice = input("> ")
+        choice = choice.upper()
+
+        # check user choice and do the appropriate thing.
+        # user wants to add to a player's score
+        if choice == "A":
+
+            # which player's score are we changing?
+            print("Choose a player to award points to")
+            print(which_player)
+            player_chosen = input("> ")
+            player_chosen = player_chosen.upper()
+
+            # change selected player's score
+            if player_chosen == "A":
+                player_a_score = increase_score(player_a_score)
+
+            elif player_chosen == "B":
+                player_b_score = increase_score(player_b_score)
+            # else runs if user entered non-valid player
+            else:
+                print("invalid user")
+
+        if choice == "D":
+  
+            # which player's score are we changing?
+            print("Choose a player to remove points from")
+            print(which_player)
+            player_chosen = input("> ")
+            player_chosen = player_chosen.upper()
+      
+            # change selected player's score
+            if player_chosen == "A":
+                player_a_score = decrease_score(player_a_score)
+      
+            elif player_chosen == "B":
+                player_b_score = increase_score(player_b_score)
+            # else runs if user entered non-valid player
+            else:
+                print("invalid user")
+  
+      
+        # user wants to see the scores
+        elif choice == "S":
+            prints_scores(player_a_score, player_b_score)
+
+        # user choose to end the game
+        elif choice == "E":
+            prints_final_result(player_a_score, player_b_score)
+            break
+
+        # user entered an option not in INSTRUCTIONS
+        else:
+            print("invalid choice")
+
+# Call runs the play_game function, starting the game.
+play_game()
