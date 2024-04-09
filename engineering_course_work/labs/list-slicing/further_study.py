@@ -13,7 +13,7 @@ def concatenate_new_value(input_list, new_value):
 
     """
 
-    pass
+    return input_list + [new_value]
 
 
 def pig_latin(word):
@@ -35,7 +35,13 @@ def pig_latin(word):
     
     """
 
-    pass
+    vowels = "AEIOUaeiou"
+    if word[0] not in vowels:
+        word[0] = word[-1]
+        word += "ay"
+    else:
+        word += "yay"
+        
 
 
 def replace_middle(input_list):
@@ -55,7 +61,9 @@ def replace_middle(input_list):
 
     """
 
-    pass
+    input_list[2:-2] = [42, 37]
+    
+    
 
 
 def delete_middle(input_list):
@@ -74,7 +82,7 @@ def delete_middle(input_list):
 
     """
 
-    pass
+    input_list.pop([2,-2])
 
 
 def double_with_list_comprehension(input_list):
