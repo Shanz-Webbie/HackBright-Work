@@ -90,11 +90,12 @@ def all_data(filename):
 
     csv = open(filename)
 #all_data(filename) → list[tuple[str]]
-    all_data = []   
+    lst_all_data = []   
     for row in csv:
-        all_data.append(tuple(row.rstrip().split("|")))
-        
-    return all_data
+        line = row.rstrip().split("|")
+        lst_all_data.append(tuple(line))
+
+    return lst_all_data
 
 
 def find_motto(filename, villager_name):
@@ -110,8 +111,14 @@ def find_motto(filename, villager_name):
     Return:
         - str: the villager's motto or None
     """
+    data = all_data(filename)
+    
+    for line in data:
+        name, species, personality, hobby, motto = line
+        if name == villager_name:
+            return motto
+    return None
 
-    # TODO: replace this with your code
 
 
 def find_likeminded_villagers(filename, villager_name):
