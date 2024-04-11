@@ -136,4 +136,12 @@ def find_likeminded_villagers(filename, villager_name):
         {'Bella', ..., 'Carmen'}
     """
 
-    # TODO: replace this with your code
+    likeminded_villagers = set()
+
+    data = all_data(filename)
+
+    for line in data:
+        name, species, personality, hobby, motto = line
+        if name == villager_name:
+            likeminded_villagers.add(personality)
+    return likeminded_villagers
