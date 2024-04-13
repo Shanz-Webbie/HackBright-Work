@@ -3,8 +3,8 @@ Edit the functions until all of the doctests pass when
 you run this file.
 """
 
-# done
-def print_list(items): 
+
+def print_list(items): # done 
     """Print each item in the input list.
     
     For example::
@@ -21,7 +21,7 @@ def print_list(items):
         print(item)
 
 
-def long_words(words):
+def long_words(words): # done
     """Return words in input list that longer than 4 characters.
     
     For example::
@@ -47,7 +47,7 @@ def long_words(words):
 
 
 
-def n_long_words(words, n):
+def n_long_words(words, n): # done
     """Return words in list longer than `n` characters.
     
     For example::
@@ -68,7 +68,7 @@ def n_long_words(words, n):
     return num_long_words
 
 
-def smallest_int(numbers):
+def smallest_int(numbers): # done
     """Find the smallest integer in a list of integers and return it.
     **DO NOT USE** the built-in function `min()`!
     
@@ -95,7 +95,7 @@ def smallest_int(numbers):
     return smallest_int_lst
 
 
-def largest_int(numbers):
+def largest_int(numbers): # done
     """Find the largest integer in a list of integers and return it.
     **DO NOT USE** the built-in function `max()`!
     
@@ -152,8 +152,11 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
-
-    return []
+    word_len = []
+    for word in words:
+        result = len(word)
+        word_len.append(result)
+    return word_len
 
 
 def sum_numbers(numbers):
@@ -171,8 +174,10 @@ def sum_numbers(numbers):
         >>> sum_numbers([])
         0
     """
-
-    return None
+    sum_of_nums = 0
+    for number in numbers:
+        sum_of_nums += number
+    return sum_of_nums
 
 
 def mult_numbers(numbers):
@@ -195,7 +200,10 @@ def mult_numbers(numbers):
         1
     """
 
-    return None
+    prod_of_nums = 1
+    for number in numbers:
+        prod_of_nums *= number
+    return prod_of_nums
 
 
 def join_strings(words):
@@ -214,7 +222,10 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    joined_strings = ""
+    for word in words:
+        joined_strings += word
+    return joined_strings
 
 
 def average(numbers):
@@ -235,8 +246,10 @@ def average(numbers):
     (Think of the best way to handle an empty input list, though,
     a feel free to provide a good solution here.)
     """
-
-    return 0
+    sum_of_nums = 0
+    for number in numbers:
+        sum_of_nums += number
+    return float(sum_of_nums / len(numbers))
 
 
 def join_strings_with_comma(words):
@@ -256,7 +269,12 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    words_with_commas = ""
+    for word in words:
+        words_with_commas += word 
+        if word != words[-1]:
+            words_with_commas += ", "
+    return words_with_commas
 
 
 def reverse_list(items):
@@ -280,7 +298,13 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    start = 0
+    end = len(items) - 1
+    while start < end:
+        items[start], items[end] = items[end], items[start]
+        start += 1
+        end -= 1
+    return items
 
 
 def reverse_list_in_place(items):
@@ -302,8 +326,8 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
-
-    return []
+    items[:] = items[::-1]
+    
 
 
 def duplicates(items):
@@ -320,7 +344,7 @@ def duplicates(items):
         >>> duplicates([1, 2, 2, 4, 4, 4, 7])
         [2, 4]
    
-    You should do this without changing the original list::
+    You should do this without changing the original list:
    
         >>> orig = ["apple", "apple", "berry"]
         >>> duplicates(orig)
@@ -329,7 +353,13 @@ def duplicates(items):
         ['apple', 'apple', 'berry']
     """
 
-    return []
+    duplicates = []
+    duplicates_set = set()
+    for item in items:
+        if item in duplicates_set and item not in duplicates:
+            duplicates.append(item)
+        duplicates_set.add(item)
+    return duplicates
 
 
 def find_letter_indices(words, letter):
