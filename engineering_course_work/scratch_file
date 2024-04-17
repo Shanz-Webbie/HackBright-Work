@@ -1,0 +1,57 @@
+# def is_berry(fruit):
+#     """Return True if fruit is a valid berry.
+
+#     Valid berries are "strawberry", "raspberry", "blackberry", and "currant".
+#     There are no other valid berries. For example, "berry" is not a valid berry.
+#     """
+
+#     valid_berries = ["strawberry", "raspberry", "blackberry","currant"]
+#     return fruit in valid_berries
+
+# print(is_berry("blueberry"))
+
+# def create_fullname(profile):
+#     """Given a tuple of user profile data, return a full name.
+
+#     Tuples that represent user profile data are 3 items long. The first item is
+#     the user's first name, the second is the user's last name, and the third is
+#     the user's hometown. Ex.: ("Hack", "Bright", "San Francisco").
+#     """
+
+#     return profile[0] + " " + profile[1]
+
+# print(create_fullname(("Hack", "Bright", "San Francisco")))
+
+# profile1 = ("Hack", "Bright", "San Francisco")
+# profile2 = ("Bodhi", "Hacks", "San Francisco")
+
+# def has_same_hometown(profile1=("Hack", "Bright", "San Francisco"), profile2=("Bodhi", "Hacks", "San Francisco")):
+#     """Return True if the hometowns in each profile match.
+
+#     Tuples that represent user profile data are 3 items long. The first item is
+#     the user's first name, the second is the user's last name, and the third is
+#     the user's hometown. Ex.: ("Hack", "Bright", "San Francisco").
+#     """
+
+#     return profile1[2] == profile2[2]
+
+# print(has_same_hometown())
+
+
+def smallest_n_items(items, n):
+    """Return the n smallest values in the given list, in descending order.
+
+    You can assume that `n` will be less than the length of the list.
+    """
+
+    sorted_lst = []
+    for item in items:
+        if n < len(items):
+            sorted_lst.append(item)
+    return sorted_lst.sort(reverse= True)
+    
+    
+
+
+print(smallest_n_items([1, 1], 0))
+print(smallest_n_items([1, 1], 2)) 
