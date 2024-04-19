@@ -11,7 +11,6 @@ def open_and_read_file(file_path):
     """
     with open(file_path) as the_file:
         text_string = the_file.read()
-        print(text_string)
 
     return text_string
 
@@ -69,19 +68,24 @@ def make_chains(text_string):
 
 def make_text(chains):
     """Return text from chains."""
-
+    
     words = []
 
     link = choice(list(chains.keys()))
     # link = list(link)
-    print(link)
 
-    # STEP 1 > Make a new key out of the second word in the first key and the random word you pulled out from the list of words that followed it.
-
-    #Look up that new key in the dictionary, and pull a new random word out of the resulting list.
-
-    #Keep doing that until your program raises a KeyError.
-
+    words.extend(link)
+    while chains.get(link):
+        try:
+            # print(chains[link])
+            new_word = (choice(chains[link]))
+            words.append(new_word)
+            link = (link[1], new_word)
+            # print(words)
+        except:
+            print("Out of options!")
+            raise ValueError
+            
     return ' '.join(words)
 
 
